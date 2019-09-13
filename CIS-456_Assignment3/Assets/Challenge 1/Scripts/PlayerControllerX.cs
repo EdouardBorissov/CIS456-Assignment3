@@ -8,6 +8,14 @@ public class PlayerControllerX : MonoBehaviour
     public float rotationSpeed;
     public float verticalInput;
 
+    /*
+     * Edouard Borissov
+     * PlayerControllerX
+     * Assignment 3
+     * A script that takes input from an axis and applies that float to the plane's rotation.
+     * The script also makes the plane move forward.
+     */
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +29,9 @@ public class PlayerControllerX : MonoBehaviour
         verticalInput = Input.GetAxis("Vertical");
 
         // move the plane forward at a constant rate
-        transform.Translate(Vector3.back * speed);
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
         // tilt the plane up/down based on up/down arrow keys
-        transform.Rotate(Vector3.right * rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.right * rotationSpeed * verticalInput * Time.deltaTime);
     }
 }

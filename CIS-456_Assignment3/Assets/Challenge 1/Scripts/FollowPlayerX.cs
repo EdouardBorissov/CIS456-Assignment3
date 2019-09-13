@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+     * Edouard Borissov
+     * FollowPlayerX
+     * Assignment 3
+     * A script that allows the camera to easily follow an object. 
+     * An offset can also be added for customized following behavior.
+     */
+
 public class FollowPlayerX : MonoBehaviour
 {
     public GameObject plane;
@@ -10,7 +18,7 @@ public class FollowPlayerX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        offset = new Vector3(30, 0, 10);
     }
 
     // Update is called once per frame
